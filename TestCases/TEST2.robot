@@ -9,7 +9,7 @@ ${Electronics} =  xpath=//*[@id="container"]/div/div[2]/div/div/span[1]
 ${Category_Type} =  Mi 3i 20000 mAh Power Bank (Fast Charging, 18W)
 ${add_to_cart} =  xpath=//*[@id="container"]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button
 ${Expected_Page_element} =  xpath=//*[@id="container"]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/a
-
+${expect_page} =  xpath=/*[@id="container"]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/a
 
 *** Test Cases ***
 LoginTest
@@ -24,6 +24,7 @@ Select Category
     Select the sub category 'power bank'
     Select an item
     Add to cart
+    close browser
 
 *** Keywords ***
 LOGIN TO APPLICATION
@@ -61,5 +62,7 @@ Add to cart
      log to console  ${url1}
      Click Element  ${add_to_cart}
      Log to Console  Step5
+     sleep  4s
+
 
 
